@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISC UNPAM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .reveal {
+            position: relative;
+            opacity: 0;
+            transition: 1s all ease;
+            transform: translateY(100px);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4F46E5;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .card {
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        /* Center alignment for management section */
+        #management {
+            display: flex;
+            align-items: center; /* Centers items vertically */
+            justify-content: center; /* Centers items horizontally */
+            flex-direction: column; /* Stacks the title and cards */
+            text-align: center;
+        }
+
+        /* Styling for each card */
+        #management .shadow-lg {
+            transition: transform 0.3s ease;
+        }
+
+        #management .shadow-lg:hover {
+            transform: translateY(-10px); /* Adds hover effect */
+        }
+
+        /* Ensure responsive spacing */
+        #management .w-80 {
+            max-width: 320px; /* Ensures consistent card size */
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+        #management .flex-wrap {
+        flex-direction: column; /* Cards will stack vertically on smaller screens */
+        align-items: center;
+            }
+        }
+
+
+        /* CSS for Horizontal Scrolling */
+        .scroll-smooth {
+            scroll-behavior: smooth; /* Smooth scroll effect */
+        }
+
+        .overflow-x-auto {
+            overflow-x: auto; /* Allow horizontal scroll */
+            white-space: nowrap; /* Prevent wrapping of items */
+        }
+
+        .snap-x {
+            scroll-snap-type: x mandatory; /* Enables snapping to elements horizontally */
+        }
+
+        .snap-center {
+            scroll-snap-align: center; /* Centers each image while scrolling */
+        }
+
+        /* Optional: Custom scrollbar styling */
+        .overflow-x-auto::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .overflow-x-auto::-webkit-scrollbar-track {
+            background: #E5E7EB; /* Light gray color for scrollbar track */
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <!-- Logo ISC -->
+                    <img src="logo.png" alt="Logo ISC" class="w-8 h-8 mr-2">
+                    
+                    <span class="ml-2 text-xl font-bold text-gray-800">Informatics Study Club</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-gray-600 hover:text-indigo-600">Home</a>
+                    <a href="#management" class="nav-link text-gray-600 hover:text-indigo-600">Kepengurusan</a>
+                    <a href="#specialization" class="nav-link text-gray-600 hover:text-indigo-600">Peminatan</a>
+                    <a href="#documentation" class="nav-link text-gray-600 hover:text-indigo-600">Dokumentasi</a>
+                    <a href="#contact" class="nav-link text-gray-600 hover:text-indigo-600">Kontak</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24">
+        <div class="gradient-bg">
+            <div class="container mx-auto px-6 py-20">
+                <div class="reveal">
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-8">Informatics Study Club</h1>
+                    <p class="text-lg text-white/90 max-w-2xl">
+                        Informatics Study Club Universitas Pamulang adalah komunitas mahasiswa Teknik Informatika yang bertujuan untuk meningkatkan kemampuan mahasiswa dalam bidang teknologi informasi melalui peminatan di bidang Data Science, UI/UX, dan Web Development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Management Section -->
+    <section id="management" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold mb-12">Kepengurusan</h2>
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Ketua" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Saldy Saputra</h3>
+                    <p class="text-gray-600">Ketua</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Wakil" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Muchtar Ali</h3>
+                    <p class="text-gray-600">Wakil</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Sekretaris" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Marsella Waty</h3>
+                    <p class="text-gray-600">Sekretaris</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Bendahara" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Naira Aqeela</h3>
+                    <p class="text-gray-600">Bendahara</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Koordinator" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Janu Sari</h3>
+                    <p class="text-gray-600">Koordinator</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Koordinator" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Ardilla</h3>
+                    <p class="text-gray-600">Koordinator</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg p-6 w-80">
+                    <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden">
+                        <img src="" alt="Koordinator" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-semibold">Iqbal Julyansah</h3>
+                    <p class="text-gray-600">Koordinator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Specialization Section -->
+    <section id="specialization" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Peminatan</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="reveal card bg-white rounded-xl shadow-lg p-6">
+                    <i class='bx bx-data text-5xl text-indigo-600 mb-4'></i>
+                    <h3 class="text-xl font-semibold mb-4">Data Science</h3>
+                    <p class="text-gray-600">Pelajari analisis data, machine learning, dan statistical computing.</p>
+                </div>
+                <div class="reveal card bg-white rounded-xl shadow-lg p-6">
+                    <i class='bx bx-laptop text-5xl text-indigo-600 mb-4'></i>
+                    <h3 class="text-xl font-semibold mb-4">Web Development</h3>
+                    <p class="text-gray-600">Belajar HTML, CSS, JavaScript, framework seperti React, dan pengembangan backend menggunakan Node.js atau Laravel.</p>
+                </div>
+                <div class="reveal card bg-white rounded-xl shadow-lg p-6">
+                    <i class='bx bx-devices text-5xl text-indigo-600 mb-4'></i>
+                    <h3 class="text-xl font-semibold mb-4">UI/UX</h3>
+                    <p class="text-gray-600">Mempelajari desain antarmuka pengguna menggunakan tools seperti Figma, Adobe XD, serta prinsip-prinsip desain pengalaman pengguna (user experience).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- Documentation Section -->
+<section id="documentation" class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Dokumentasi</h2>
+        <div class="relative overflow-hidden">
+            <!-- Wrapper for Horizontal Scrolling -->
+            <div class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+                <!-- Documentation Images -->
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPfElsohjg-MTHor4RICxM5yvFVflqUr4alpT1yh5kgu9jQhJUtFe8LBzyYARWKH4f9J-QbgJ2cgtbioyESSB5kHEVWyRLrMRft0D3nlGMb=s190" alt="Documentation 1" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBNtdbu8zYJS9sN37WinABWIZRBnOq5ShMxpNB7fhU3DVhRUyJ-VbOCOqqAPYsxVYdLrrAvi8PQl88zkt_m4zgDHYAy91aHNdC3-NAkHuYN_gA=s190" alt="Documentation 2" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBMV7Fro4rEksetqVlYpHrDmffa8pCJUg-cOn_cAcXNRDZupMESTsRrdO_1H8icVk5oJ1KxQEPnpDYDzrIm4AUpSzqOLrNPvOZVjL5de6loGEg=s190" alt="Documentation 3" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPCX-oBikMP5dg7lpQOPNGCOor1LqvSjRrRjtO-Pr9Bc-dJ086fAR7kSGRZLmGcDFCZjh2WdoF2c2VpRQ-XsE5-CMFwbjZcSClhFSnMdy5Khw=s190" alt="Documentation 4" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBMCxi56i6vg-G5CS-s5Y23NCC1231HaNVIawlvtblBWFrsrIrD65WcJfhhb00PoJfP4JL3cFhgfCasnS28WKTgVS4CZdeVzW_Usip5bubgFrw=s190" alt="Documentation 5" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBO0yVMztX206Vyxk2Udd4UnghNgGoai3wubuHZ_oftQA8BkgW3-xNO_1sXCgQKaXlT4n01F4HsymeaEqYbrxdJ9jNAFhblN8qQIV_tiKtNQaA=s190" alt="Documentation 6" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPbV5lNgROo6To0usAXfB0GSxnE4KSCde_yqayKAzQ-phhukhLtAWzix-zff1RGiiiGwJ4w1qqHCWzb6kkGZ9Fm642TX0yIhVR1rm_NGHFNHQ=s190" alt="Documentation 7" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPEXW2e0puYh7D8Ztq7eyxgKDXM4T2HC3BCYDCKSFrSMOPp3JcEbXLG36oCsk_P40LEM9wbP2hbj62BnxFAvPtUhaFK4Z1PhodyNvqJ6cvM5Q=s190" alt="Documentation 8" class="rounded-lg shadow-lg">
+                </div>
+                <div class="shrink-0 snap-center">
+                    <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBOudLgMPYOoCP0b5aOr2QH5iSmWGc6OQAiIlxaiO8zn8EaXGWch96zuNr5LQWVWrnIVo5XfEJIhZ5XV2ADObkXcgJqSn-h5DzU8b1ZBd78FJg=s190" alt="Documentation 9" class="rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Kontak</h2>
+            <div class="flex flex-col items-center justify-center space-y-6">
+                <!-- Email -->
+                <div class="flex items-center space-x-4">
+                    <i class='bx bx-envelope text-4xl text-indigo-600'></i>
+                    <a href="mailto:isc@unpam.ac.id" class="text-lg text-gray-800 hover:underline">
+                        isc@unpam.ac.id
+                    </a>
+                </div>
+                <!-- Website -->
+                <div class="flex items-center space-x-4">
+                    <i class='bx bx-globe text-4xl text-indigo-600'></i>
+                    <a href="https://www.isc-unpam.my.id/" target="_blank" class="text-lg text-gray-800 hover:underline">
+                        isc-unpam.my.id
+                    </a>
+                </div>
+                <!-- Instagram -->
+                <div class="flex items-center space-x-4">
+                    <i class='bx bxl-instagram text-4xl text-indigo-600'></i>
+                    <a href="https://instagram.com/isc.unpam" target="_blank" class="text-lg text-gray-800 hover:underline">
+                        @isc.unpam
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <script>
+        function showPage(pageId) {
+        // Previous showPage code remains the same
+        
+        // Add new animation for management cards
+        if(pageId === 'management') {
+            const cards = document.querySelectorAll('.management-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('active');
+                }, index * 200); // Adds 200ms delay between each card animation
+            });
+        }
+    }
+
+        // Reveal on scroll
+        function reveal() {
+            const reveals = document.querySelectorAll(".reveal");
+            reveals.forEach((reveal) => {
+                const windowHeight = window.innerHeight;
+                const elementTop = reveal.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveal.classList.add("active");
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".overflow-x-auto");
+    let isScrollingForward = true;
+
+    setInterval(() => {
+        if (container.scrollLeft + container.offsetWidth >= container.scrollWidth) {
+            isScrollingForward = false;
+        } else if (container.scrollLeft === 0) {
+            isScrollingForward = true;
+        }
+
+        container.scrollBy({
+            left: isScrollingForward ? 200 : -200, // Scroll 200px at a time
+            behavior: "smooth"
+        });
+    }, 2000); // Delay in milliseconds
+});
+
+
+        // Add event listener for initial load
+    document.addEventListener('DOMContentLoaded', function() {
+        if(document.getElementById('management').classList.contains('active')) {
+            showPage('management');
+        }
+    });
+    
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
